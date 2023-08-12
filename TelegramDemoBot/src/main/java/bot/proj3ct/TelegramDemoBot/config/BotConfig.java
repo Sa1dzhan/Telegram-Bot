@@ -1,0 +1,30 @@
+package bot.proj3ct.TelegramDemoBot.config;
+
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
+@Configuration
+@Data
+@PropertySource("application.properties")
+public class BotConfig {
+    @Value("${bot.name}")
+    String botName;
+    @Value("${bot.token}")
+    String token;
+    @Value("")
+    String api;
+
+    public String getBotName() {
+        return botName;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getApi() {
+        return api;
+    }
+}
